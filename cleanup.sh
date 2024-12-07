@@ -10,6 +10,7 @@ fi
 find "./terraform/modules" -type d -name '.terraform' -exec rm -rf {} \;
 find "./terraform/modules" -type f -name 'terraform.tfstate' -exec rm -f {} \;
 find "./terraform/modules" -type f -name 'terraform.tfstate.backup' -exec rm -f {} \;
+find "./terraform/modules" -type f -name 'terraform..terraform.lock.hcl' -exec rm -f {} \;
 
 find "./terraform/resources" -type d -name '.terraform' -exec rm -rf {} \;
 find "./terraform/resources" -type f -name 'terraform.tfstate' -exec rm -f {} \;
