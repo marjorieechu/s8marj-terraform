@@ -1,0 +1,2 @@
+aws secretsmanager delete-secret --secret-id “arn:aws:secretsmanager:us-east-1:…:secret:… some-name” --force-delete-without-recovery		OR
+aws secretsmanager delete-secret --secret-id <secret-name> --force-delete-without-recovery

@@ -1,0 +1,9 @@
+aws_region = "us-east-1"
+aws_iam_group = "hr-dept"
+policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+tags = {
+    owner          = "EK TECH SOFTWARE SOLUTION"
+    environment    = "dev"
+    project        = "HR"
+    created_by     = "Terraform"
+    cloud_provider = "aws"}
