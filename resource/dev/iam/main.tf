@@ -25,8 +25,8 @@ locals {
         cloud_provider = "aws"}
 }
 
-module "jenkins-master" {
-  source        = "../../../modules/iam"
+module "iam" {
+  source        = "../../../module/iam"
   aws_region = local.aws_region
   aws_iam_group =local.aws_iam_group
   policy_arn = local.policy_arn

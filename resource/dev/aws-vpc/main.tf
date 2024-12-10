@@ -27,9 +27,9 @@ locals {
   }
 
 module "jenkins-master" {
-  source        = "../../../modules/aws-vpc"
+  source        = "../../../module/aws-vpc"
   name    = local.name
-  vpc_cidr      = local.key_name
+  vpc_cidr      = local.vpc_cidr
   aws_region = local.aws_region
   availability_zones = local.availability_zones
     tags          = local.tags
