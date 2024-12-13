@@ -36,8 +36,11 @@ resource "aws_db_instance" "education" {
   engine            = "postgres"
   engine_version    = "16.3"
   db_name           = "del"
-  username          = "edu"
-  password          = "SecurePass123!"
+  # username          = data.aws_secretsmanager_secret_version.db_username.secret_string
+  # password          = data.aws_secretsmanager_secret_version.db_password.secret_string
+  username = jsondecode(data.aws_secretsmanager_secret_version.db_username.secret_string)["DB_USERNAME"]
+  password = jsondecode(data.aws_secretsmanager_secret_version.db_password.secret_string)["DB_PASSWORD"]
+  
   #   db_subnet_group_name   = aws_db_subnet_group.education.name
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
   parameter_group_name   = aws_db_parameter_group.education.name
