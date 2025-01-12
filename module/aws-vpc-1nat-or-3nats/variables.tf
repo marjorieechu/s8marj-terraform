@@ -1,11 +1,29 @@
-aws_region           = "us-east-1"
-vpc_cidr             = "10.0.0.0/16"
-public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-private_subnet_cidrs = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-availability_zones   = ["us-east-1a", "us-east-1b", "us-east-1c"]
-tags = {
-  environment    = "dev"
-  project        = "vpc_demo"
-  created_by     = "terraform"
-  cloud_provider = "aws"
+variable "aws_region" {
+  description = "AWS region to deploy resources"
+  type        = string
+}
+
+variable "vpc_cidr" {
+  description = "The CIDR block for the VPC"
+  type        = string
+}
+
+variable "public_subnet_cidrs" {
+  description = "List of CIDRs for the public subnets"
+  type        = list(string)
+}
+
+variable "private_subnet_cidrs" {
+  description = "List of CIDRs for the private subnets"
+  type        = list(string)
+}
+
+variable "availability_zones" {
+  description = "List of availability zones"
+  type        = list(string)
+}
+
+variable "tags" {
+  description = "Map of tags to assign to resources"
+  type        = map(string)
 }
